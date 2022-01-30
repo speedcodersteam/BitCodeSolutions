@@ -30,15 +30,21 @@ package me.karunarathne ;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+/**
+ * Solution for the <b> Phone Charging </b> problem. This is the only class of the 
+ * solution package. Only uses static methods.  
+ */
 public class PhoneCharging {
     public static void main(String[] args) throws Exception {
         System.out.println(
             "\nTime to charge is " +
-            getTime (batteryLife ())
+            getTime (timeToCharge () )
         );
     }
 
     /**
+     * This method is used to convert the given, time-as-minutes into time as 
+     * hours-and-minutes. 
      * 
      * @param minutes
      * @return timeInHoursAndMinutes
@@ -55,11 +61,17 @@ public class PhoneCharging {
     }
 
     /**
+     * This method handles taking all the console inputs, and passing them over to 
+     * their relevent methods, for checking and parsing. It does some checks by itself. 
+     * Uses a try-with-resources block for the java.util.Scanner object. 
+     * It calls the calculate method with the parsed inputs, and returns the result 
+     * directly to the caller, total time - as minutes.
+     * Throws a generic Exception, if any was propagated. 
      * 
      * @return timeInMinutes
      * @throws Exception
      */
-    public static int batteryLife () throws Exception {
+    public static int timeToCharge () throws Exception {
         float battery; int years; float voltage;
 
         try (Scanner scanner = new Scanner (System.in)) {
@@ -86,6 +98,8 @@ public class PhoneCharging {
 
     /**
      * The number of hours depends on the 3 methods used.
+     * Calling each of those methods, and adding up all the minutes (as integer), 
+     * and returning the result. 
      * 
      * @param battery
      * @param years
@@ -143,6 +157,11 @@ public class PhoneCharging {
     }
 
     /**
+     * Using this method to take the voltage as input. It uses two regular expressions, 
+     *      ^(1)\s?(v|V)?\s*$       for 1 V
+     *      ^(1.5)\s?(v|V)?\s*$     for 1.5 V
+     * Returns the float, and if the input does not match either of regular expressions, 
+     * throws an InputMismatchException .
      * 
      * @param voltageString
      * @return voltage
@@ -159,6 +178,15 @@ public class PhoneCharging {
     }
 
     /**
+     * This method is used to take the number of years (the phone was used) as input. 
+     * Supports the word <i>YEARS</i> to be entered in any case (acceptable). 
+     * Also can take spaces and without spaces, or just the number as the input. 
+     * Uses the regular expression 
+     *          ^\d{1}( )?(years|Years|year|Year|YEAR)*\s*$
+     * to check all those formats, and picks apart the first character of the input 
+     * string, cause that would be the number of years.
+     * Returns it as int. If the input doesn't match, throws an 
+     * InputMismatchException .
      * 
      * @param usedYears
      * @return years
