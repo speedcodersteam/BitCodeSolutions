@@ -14,7 +14,7 @@ Saman hopes to create a simple product that calculates how long it will take to 
 The number of hours depends on the 3 methods used.
 
 ### Constraints
-0% <= *C* <= 100%
+0% <= *C* <= 100%  
 **V = 1** or **V = 1.5**
 
 ### Inputs :
@@ -33,12 +33,9 @@ Specify the time it takes for the phone to fully charge.
 
 ## Important
 Feel free to use any programming language. (Eg: **Java** or **C++**)
-If the user's input is not correct, you should throw an exception. For those who are unfamiliar with exception handling, just print an Error message.
+If the user's input is not correct, you should throw an exception. For those who are unfamiliar with exception handling, just print an Error message.  
 
-
-
-
-##### Question was taken from BitCode V 3.0
+#### Question was taken from BitCode V 3.0
 Organized by  
 <b>BITSA</b>  
 Department of Information Systems  
