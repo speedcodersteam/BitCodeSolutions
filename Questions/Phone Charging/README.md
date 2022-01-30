@@ -23,9 +23,9 @@ The number of hours depends on the 3 methods used.
 Specify the time it takes for the phone to fully charge.
 
 # Sample Input
-61% 
-2 years 
-1.5v
+61%  
+2 years  
+1.5v  
 
 # *Sample Output*
 2 hours
