@@ -168,9 +168,9 @@ public class PhoneCharging {
      * @throws InputMismatchException
      */
     public static float takeVoltage (String voltageString) throws InputMismatchException {
-        if (voltageString.matches("^(1)\\s?(v|V)?\\s*$")) {   // integer \\d{1}\\s?(v|V)?\\s*$
+        if (voltageString.matches("^(1)\\s?(v|V)?\\s*$")) {   // integer \d{1}\s?(v|V)?\s*$
             return  (float) 1.0 ;
-        } else if (voltageString.matches("^(1.5)\\s?(v|V)?\\s*$")) { // float ^\\d{1}(.){1}\\d{1}\\s?(v|V)?\\s*$
+        } else if (voltageString.matches("^(1.5)\\s?(v|V)?\\s*$")) { // float ^\d{1}(.){1}\d{1}\s?(v|V)?\s*$
             return  (float) 1.5 ;
         }
 
