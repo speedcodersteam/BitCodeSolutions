@@ -24,7 +24,7 @@
  * https://fb.com/dilshankarunarathn
  */
 
-package me.karunarathne;
+package me.karunarathne.BitCode;
 
 import java.util.ArrayList;
 import java.util.InputMismatchException;
