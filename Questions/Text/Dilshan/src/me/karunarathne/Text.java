@@ -33,11 +33,12 @@ import java.util.Scanner;
 public class Text {
 
     private static ArrayList <Integer> starts;
+    private static String paragraph ;
     public static void main(String[] args) throws Exception {
-        
+        sliceText (true) ;
     }
 
-    private static void takeInput (boolean enablePrompt) throws Exception {
+    private static void sliceText (boolean enablePrompt) throws Exception {
         try (Scanner scanner = new Scanner (System.in)) { 
             if (enablePrompt) System.out.print ("Enter the char range > ") ;
             
@@ -50,33 +51,34 @@ public class Text {
             }
 
             if (enablePrompt) System.out.print ("Enter the paragraph > ") ;
-            String paragraph = scanner.nextLine() ;
+            paragraph = scanner.nextLine() ;
 
-            starts = createTextIndex (paragraph) ;
+            starts = createTextIndex () ;
 
-            printOutput (checkForStart(start), checkForEnd (end)) ;
+            printOutput (checkForStart(start), checkForStart (end), enablePrompt) ;
         }
     }
 
-    private static int checkForEnd (int end) throws Exception {
-        boolean found = false ;
-        for (int i=end; i<starts.size(); i++) {
-            if (starts.contains(i)) {
-                found = true ;
-                return i ;
-            }
-        }
-        if (found == false) {
-            for (int i=end; i>0; i--) {
-                if (starts.contains(i)) {
-                    found = true ;
-                    return i ;
-                }
-            }
-        }
+    private static void printOutput(int start, int end, boolean enablePrompt) {
+        if (enablePrompt) System.out.println ("Sliced text: \n") ;
 
-        throw new Exception ("ending index was not found") ;
+        System.out.println(paragraph.substring(start, end)) ;
     }
+
+    // private static int checkForEnd (int end) throws Exception {
+    //     boolean found = false ;
+    //     for (int i=end; i<starts.size(); i++) {
+    //         if (starts.contains(i)) {
+    //             found = true ;
+    //             return i ;
+    //         }
+    //     }
+    //     if (found == false) {
+    //         return paragraph.length() ;
+    //     }
+
+    //     throw new Exception ("ending index was not found") ;
+    // }
 
     private static int checkForStart (int start) throws Exception {
         for (int i=start; i>0; i--) {
@@ -88,7 +90,7 @@ public class Text {
         throw new Exception ("starting index was not found") ;
     }
 
-    private static ArrayList <Integer> createTextIndex(String paragraph) throws InputMismatchException {
+    private static ArrayList <Integer> createTextIndex() throws InputMismatchException {
         ArrayList <Integer> starts = new ArrayList <Integer> () ;
 
         if (paragraph.charAt(0) == ' ') {
