@@ -1,6 +1,8 @@
 # Assessment Tax
 ![](img.png)
-  
+
+### Difficulty: Easy  
+
 A person living in a municipal area has paid Rs. 500 per quarter as assessment tax. If the rate of assessment tax levied by the Municipal Council in each year is A , What was the annual valuation of his house in those years?
   
 ## Input Format

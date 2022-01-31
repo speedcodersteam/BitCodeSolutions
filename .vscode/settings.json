@@ -1,6 +1,7 @@
 {
     "java.project.sourcePaths": [
         "Questions\\Phone Charging\\Dilshan",
-        "Questions\\Phone Charging\\Dilshan\\src"
+        "Questions\\Phone Charging\\Dilshan\\src",
+        "Questions\\Text\\Dilshan\\src"
     ]
 }

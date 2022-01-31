@@ -1,12 +1,10 @@
 # Text
 ![](img.png)
-  
-Submissions: 3  
-Max Score: 5  
-Difficulty: Easy  
+
+### Difficulty: Easy  
   
 Shalika has an idea to create a computer program to distinguish a few specific words in a given sentence. Shalika gives you the following information about this.
-
+  
 After giving the number of characters to start **S** and the number to end **E**, the relevant part should be printed. If the number of characters in the middle of a word starts or ends, that word must also be applied to the output.  
 
 ## Input Format
