@@ -93,7 +93,6 @@ public class PhoneCharging {
         } 
 
         return calculate (battery, years, voltage) ;
-
     }
 
     /**
