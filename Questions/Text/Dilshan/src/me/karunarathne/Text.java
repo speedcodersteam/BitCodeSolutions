@@ -27,9 +27,12 @@
 package me.karunarathne;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Text {
+
+    private static ArrayList <Integer> starts;
     public static void main(String[] args) throws Exception {
         
     }
@@ -49,13 +52,49 @@ public class Text {
             if (enablePrompt) System.out.print ("Enter the paragraph > ") ;
             String paragraph = scanner.nextLine() ;
 
-            ArrayList <Integer> starts = createTextIndex (paragraph) ;
+            starts = createTextIndex (paragraph) ;
+
+            printOutput (checkForStart(start), checkForEnd (end)) ;
         }
     }
 
-    private static ArrayList <Integer> createTextIndex(String paragraph) {
+    private static int checkForEnd (int end) throws Exception {
+        boolean found = false ;
+        for (int i=end; i<starts.size(); i++) {
+            if (starts.contains(i)) {
+                found = true ;
+                return i ;
+            }
+        }
+        if (found == false) {
+            for (int i=end; i>0; i--) {
+                if (starts.contains(i)) {
+                    found = true ;
+                    return i ;
+                }
+            }
+        }
+
+        throw new Exception ("ending index was not found") ;
+    }
+
+    private static int checkForStart (int start) throws Exception {
+        for (int i=start; i>0; i--) {
+            if (starts.contains(i)) {
+                return i ;
+            } 
+        }
+
+        throw new Exception ("starting index was not found") ;
+    }
+
+    private static ArrayList <Integer> createTextIndex(String paragraph) throws InputMismatchException {
         ArrayList <Integer> starts = new ArrayList <Integer> () ;
-        
+
+        if (paragraph.charAt(0) == ' ') {
+            throw new InputMismatchException ("donot start the paragraph with a space") ;
+        }
+        starts.add(0) ;
         for (int i=0; i<paragraph.length(); i++) {
             if (paragraph.charAt(i) == ' ') {
                 starts.add(i+1) ;
