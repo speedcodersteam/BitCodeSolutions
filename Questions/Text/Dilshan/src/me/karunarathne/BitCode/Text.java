@@ -30,14 +30,29 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+/**
+ * Solution for Text problem.
+ * Recommended to use Java 17 for this code.
+ */
 public class Text {
 
     private static ArrayList <Integer> starts;
     private static String paragraph ;
+
+    /**
+     * 
+     * @param args  console arguments, not used in this module
+     * @throws Exception propagated exceptions from called methods
+     */
     public static void main(String[] args) throws Exception {
         sliceText (false) ;
     }
 
+    /**
+     * 
+     * @param enablePrompt If true, shows helping messages for input-output
+     * @throws Exception propagated exceptions from called methods
+     */
     private static void sliceText (boolean enablePrompt) throws Exception {
         try (Scanner scanner = new Scanner (System.in)) { 
             if (enablePrompt) System.out.print ("Enter the char range > ") ;
@@ -59,27 +74,24 @@ public class Text {
         }
     }
 
+    /**
+     * 
+     * @param start specifies the real starting index of the first word of the slice
+     * @param end   specifies the real starting index of the last word of the slice
+     * @param enablePrompt  If true, shows helping messages for input-output
+     */
     private static void printOutput(int start, int end, boolean enablePrompt) {
         if (enablePrompt) System.out.println ("Sliced text: \n") ;
 
         System.out.println(paragraph.substring(start, end)) ;
     }
 
-    // private static int checkForEnd (int end) throws Exception {
-    //     boolean found = false ;
-    //     for (int i=end; i<starts.size(); i++) {
-    //         if (starts.contains(i)) {
-    //             found = true ;
-    //             return i ;
-    //         }
-    //     }
-    //     if (found == false) {
-    //         return paragraph.length() ;
-    //     }
-
-    //     throw new Exception ("ending index was not found") ;
-    // }
-
+    /**
+     * 
+     * @param start An integer that specifies the starting index of the slice
+     * @return realStart   An integer that specifies the first character of the containing word
+     * @throws Exception    if the containing word is not found
+     */
     private static int checkForStart (int start) throws Exception {
         for (int i=start; i>0; i--) {
             if (starts.contains(i)) {
@@ -90,6 +102,11 @@ public class Text {
         throw new Exception ("starting index was not found") ;
     }
 
+    /**
+     * 
+     * @return starts   A list composed of the starting index of each word
+     * @throws InputMismatchException   if the text starts with a space
+     */
     private static ArrayList <Integer> createTextIndex() throws InputMismatchException {
         ArrayList <Integer> starts = new ArrayList <Integer> () ;
 
@@ -106,6 +123,12 @@ public class Text {
         return starts ;
     }
 
+    /**
+     * 
+     * @param start The starting point of the slice
+     * @param end   The ending point of the slice
+     * @return inRange Boolean true if they are within the given constains
+     */
     private static boolean checkInputRange (int start, int end) {
         if (start < 0) {
             System.out.println("Error: Start Number");
