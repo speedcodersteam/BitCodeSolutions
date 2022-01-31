@@ -40,6 +40,9 @@ public class Text {
     private static String paragraph ;
 
     /**
+     * main method, used as a test stub for the program.
+     * Call sliceText with true to get a user-friendly interface. Or false to optimize 
+     * testing and output checking.
      * 
      * @param args  console arguments, not used in this module
      * @throws Exception propagated exceptions from called methods
@@ -49,6 +52,10 @@ public class Text {
     }
 
     /**
+     * The method that handles calls to all the other functions, and this also takes care
+     * of taking inputs. 
+     * Used a try-with-resources block for the java.util.Scanner object. 
+     * Throws any exception that's propagated from calling methods. 
      * 
      * @param enablePrompt If true, shows helping messages for input-output
      * @throws Exception propagated exceptions from called methods
@@ -75,6 +82,8 @@ public class Text {
     }
 
     /**
+     * Used to print the sliced String. Use the enablePrompt boolean to switch 
+     * between user-helping messages, or input-output testing optimization.
      * 
      * @param start specifies the real starting index of the first word of the slice
      * @param end   specifies the real starting index of the last word of the slice
@@ -87,6 +96,9 @@ public class Text {
     }
 
     /**
+     * Iterates through the starts list, and checks if it contains the given index. 
+     * If there's no match, decreases the checking index and tries again. 
+     * Returns the first character's index if it's found. Otherwise throws an exception.
      * 
      * @param start An integer that specifies the starting index of the slice
      * @return realStart   An integer that specifies the first character of the containing word
@@ -103,6 +115,9 @@ public class Text {
     }
 
     /**
+     * Takes the input String for spaces, and add the next character's index to the
+     * starts list, so it would contain the starting indexes of all the words. 
+     * If the input String starts with a whitespace, throws an InputMismatchException .
      * 
      * @return starts   A list composed of the starting index of each word
      * @throws InputMismatchException   if the text starts with a space
@@ -124,10 +139,12 @@ public class Text {
     }
 
     /**
+     * Checks the start and end integers to see if they falls within the given constains. 
+     * If they are out of bounds, prints the relevent error messages. 
      * 
      * @param start The starting point of the slice
      * @param end   The ending point of the slice
-     * @return inRange Boolean true if they are within the given constains
+     * @return inRange Boolean true if start-end are within the given constains
      */
     private static boolean checkInputRange (int start, int end) {
         if (start < 0) {
