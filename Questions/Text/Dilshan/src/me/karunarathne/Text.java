@@ -26,14 +26,15 @@
 
 package me.karunarathne;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Text {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         
     }
 
-    private static void takeInput (boolean enablePrompt) {
+    private static void takeInput (boolean enablePrompt) throws Exception {
         try (Scanner scanner = new Scanner (System.in)) { 
             if (enablePrompt) System.out.print ("Enter the char range > ") ;
             
@@ -47,7 +48,21 @@ public class Text {
 
             if (enablePrompt) System.out.print ("Enter the paragraph > ") ;
             String paragraph = scanner.nextLine() ;
+
+            ArrayList <Integer> starts = createTextIndex (paragraph) ;
         }
+    }
+
+    private static ArrayList <Integer> createTextIndex(String paragraph) {
+        ArrayList <Integer> starts = new ArrayList <Integer> () ;
+        
+        for (int i=0; i<paragraph.length(); i++) {
+            if (paragraph.charAt(i) == ' ') {
+                starts.add(i+1) ;
+            }
+        }
+
+        return starts ;
     }
 
     private static boolean checkInputRange (int start, int end) {
