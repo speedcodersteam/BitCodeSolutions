@@ -35,7 +35,7 @@ public class Text {
     private static ArrayList <Integer> starts;
     private static String paragraph ;
     public static void main(String[] args) throws Exception {
-        sliceText (true) ;
+        sliceText (false) ;
     }
 
     private static void sliceText (boolean enablePrompt) throws Exception {
