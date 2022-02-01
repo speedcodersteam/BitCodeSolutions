@@ -48,7 +48,7 @@ public class Text {
      * @throws Exception propagated exceptions from called methods
      */
     public static void main(String[] args) throws Exception {
-        sliceText (false) ;
+        sliceText (true) ;
     }
 
     /**

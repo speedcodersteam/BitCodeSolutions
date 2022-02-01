@@ -31,7 +31,7 @@ If anything doesn't satisfy the given constraints, and no indication is given in
 
 ## Sample Output
 
-Score: 10
+Score: 10  
 Qualifies
 
 ## Important

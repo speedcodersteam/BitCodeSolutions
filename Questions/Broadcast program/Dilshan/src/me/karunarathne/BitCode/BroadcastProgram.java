@@ -24,8 +24,8 @@ import java.util.Scanner ;
 
 public class BroadcastProgram {
 
-    public static void main(String[] args) {
-        
+    public static void main(String[] args) throws Exception {
+        checkIfQualifies () ;
     }
 
     private static void checkIfQualifies () throws Exception {
@@ -40,15 +40,18 @@ public class BroadcastProgram {
                 throw new IllegalArgumentException ("bid is too high") ;
             }
 
-            if (! checkScore (inputs [1])) {
+            int score = checkScore (inputs [1]) ;
+            if (score < 10) {
                 System.out.println("Rejected Score below 10") ;
                 return ;
             }
+
+            System.out.println (score + "\nQualifies");
         } 
 
     }
 
-    private static boolean checkScore(String answer) throws IllegalArgumentException {
+    private static int checkScore(String answer) throws IllegalArgumentException {
         int score = 0 ;
 
         if (answer.length() != 4) {
@@ -59,10 +62,7 @@ public class BroadcastProgram {
         if (answer.charAt(2) == 'y') {score += 2;} ;
         if (answer.charAt(3) == 'y') {score += 4;} ;
 
-        if (score >= 10) {
-            return true ;
-        }
-        return false ;
+        return score ;
     }
     
 }
