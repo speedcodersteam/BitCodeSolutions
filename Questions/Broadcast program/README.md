@@ -23,6 +23,7 @@ The bid should be between Rs 2-5 million. (2 ≤ Rs million ≤ 5)
 Indicate whether tv channel qualify for the second round.  
 If bid value is not valid print “**Rejected Bid value is low**”.  
 If score less than 10 print “**Rejected Score below 10**”.  
+If anything doesn't satisfy the given constraints, and no indication is given in the question, you may throw and exception. If you are unfamiliar with exceptions, just print an error message.  
 
 ## Sample Input
 

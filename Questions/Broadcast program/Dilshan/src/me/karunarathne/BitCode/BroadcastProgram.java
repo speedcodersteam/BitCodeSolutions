@@ -18,7 +18,9 @@
  * https://fb.com/dilshankarunarathn
  */
 
-package me.karunarathne.BitCode;
+package me.karunarathne.BitCode ;
+
+import java.util.Scanner ;
 
 public class BroadcastProgram {
 
@@ -26,9 +28,41 @@ public class BroadcastProgram {
         
     }
 
-    private static void checkIfQualifies () {
-        try (Scanner scanner = new Scanner (System.in)) ;
+    private static void checkIfQualifies () throws Exception {
+        try (Scanner scanner = new Scanner (System.in)) {
+            String inputs [] = scanner.nextLine().split(" ") ;
+            
+            double bid = Double.valueOf(inputs [0]) ;
+            if (bid < 2.0) {
+                System.out.println("Rejected Bid value is low") ;
+                return ;
+            } else if (bid > 5.0) {
+                throw new IllegalArgumentException ("bid is too high") ;
+            }
 
+            if (! checkScore (inputs [1])) {
+                System.out.println("Rejected Score below 10") ;
+                return ;
+            }
+        } 
+
+    }
+
+    private static boolean checkScore(String answer) throws IllegalArgumentException {
+        int score = 0 ;
+
+        if (answer.length() != 4) {
+            throw new IllegalArgumentException ("incorrect input") ;
+        }
+        if (answer.charAt(0) == 'y') {score += 8;} ;
+        if (answer.charAt(1) == 'y') {score += 6;} ;
+        if (answer.charAt(2) == 'y') {score += 2;} ;
+        if (answer.charAt(3) == 'y') {score += 4;} ;
+
+        if (score >= 10) {
+            return true ;
+        }
+        return false ;
     }
     
 }
