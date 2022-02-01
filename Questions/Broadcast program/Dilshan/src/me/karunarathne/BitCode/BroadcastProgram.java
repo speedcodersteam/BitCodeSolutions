@@ -22,5 +22,13 @@ package me.karunarathne.BitCode;
 
 public class BroadcastProgram {
 
+    public static void main(String[] args) {
+        
+    }
+
+    private static void checkIfQualifies () {
+        try (Scanner scanner = new Scanner (System.in)) ;
+
+    }
     
 }
