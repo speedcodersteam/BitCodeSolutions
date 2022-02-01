@@ -20,14 +20,33 @@
 
 package me.karunarathne.BitCode ;
 
+import java.util.InputMismatchException;
 import java.util.Scanner ;
 
+/**
+ * Solution for Broadcast Program problem.
+ * Recommended to use Java 17 for this code.
+ */
 public class BroadcastProgram {
 
+    /**
+     * main method, used as a test stub for the program.
+     * 
+     * @param args not used
+     * @throws Exception propagated exceptions from called methods
+     */
     public static void main(String[] args) throws Exception {
         checkIfQualifies () ;
     }
 
+    /**
+     * Uses a try-with-resources block for the java.util.Scanner object. 
+     * Takes input and splits the string to get individual inputs. Checks if the bit is within 
+     * the given constraints, and if not, prints the relevent messages. 
+     * Finally, calls the checkScore method and get the score, and prints the final output. 
+     * 
+     * @throws Exception propagated exceptions from called methods
+     */
     private static void checkIfQualifies () throws Exception {
         try (Scanner scanner = new Scanner (System.in)) {
             String inputs [] = scanner.nextLine().split(" ") ;
@@ -51,11 +70,20 @@ public class BroadcastProgram {
 
     }
 
-    private static int checkScore(String answer) throws IllegalArgumentException {
+    /**
+     * This method is used to calculate the score for each channel, by taking the answers 
+     * they gave for the set of conditions. The answer String should only contain four characters. 
+     * If exceeds, throws an InputMismatchException .
+     * 
+     * @param answer String containing the answer for each condition
+     * @return int score is the calculated score
+     * @throws InputMismatchException if the answer string is longer than 4 characters
+     */
+    private static int checkScore(String answer) throws InputMismatchException {
         int score = 0 ;
 
         if (answer.length() != 4) {
-            throw new IllegalArgumentException ("incorrect input") ;
+            throw new InputMismatchException ("incorrect input") ;
         }
         if (answer.charAt(0) == 'y') {score += 8;} ;
         if (answer.charAt(1) == 'y') {score += 6;} ;
