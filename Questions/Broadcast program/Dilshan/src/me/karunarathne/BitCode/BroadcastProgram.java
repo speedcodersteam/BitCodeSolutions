@@ -1,4 +1,10 @@
 /** 
+ * <h1> Broadcast Program </h1>
+ * The opportunity to apply for the official broadcast of the 2022 Cricket Games is 
+ * available on TV channels. You have to bid through the channels and apply for it. 
+ * The bid will be given 7 days and the most suitable TV channels will be given 
+ * 4 main conditions in addition to the bid limit and separate points will be awarded 
+ * for those conditions.
  * 
  * Question creadit goes to: 
  * BitCode V 3.0 
