@@ -3,16 +3,18 @@
 
 ### Difficulty: Easy  
   
-ABC Super Center is a shopping complex located in the Colombo 02 area and sells all its products. They have clothes, bags, cosmetics, shoes, kitchen utensils, etc. During the Christmas season, they have launched a number of promotional programs under which they offer gift vouchers for every item over Rs. 1000.  
+ABC Super Center is a shopping complex located in the Colombo 02 area and sells all its products. They have clothes, bags, cosmetics, shoes, kitchen utensils, etc. During the Christmas season, they have launched a number of promotional programs under which they offer gift vouchers for every item priced Rs. 1000 or higher. 
 
-If the value of that item exceeds Rs. 1000, another voucher will be issued for the next Rs. 1000. For example, if you purchase an item worth Rs. 2,500, two gift vouchers will be issued. It is possible for one customer to purchase an **N** number of items.
+If the value of that item exceeds Rs. 1000, another voucher will be issued for the next Rs. 1000. For example, if you purchase an item worth Rs. 2,500, two gift vouchers will be issued.  
+It is possible for one customer to purchase an **N** number of items.
   
 Employees make mistakes when calculating the number of vouchers to be issued. So write a program for this.  
 
 ## Input Format
 
 The input contains **N** number of amounts separated by spaces.  
-The number of amounts ends with letter "**e**", and it is not case sensitive.
+The number of amounts ends with letter "**e**", and it is not case sensitive.  
+If an entered item has a price over Rs. 100000, you can ignore that by considering it to be a mistake by the cashier. 
 
 ## Constraints
 0 < Item Price < 100,000
