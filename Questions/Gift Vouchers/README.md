@@ -12,7 +12,7 @@ Employees make mistakes when calculating the number of vouchers to be issued. So
 ## Input Format
 
 The input contains **N** number of amounts separated by spaces.  
-The number of amounts ends with letter "**e**" and it not case sensitive.
+The number of amounts ends with letter "**e**", and it is not case sensitive.
 
 ## Constraints
 0 < Item Price < 100,000
@@ -38,7 +38,8 @@ Yes
 
 1500  
 2000  
-200000
+200000  
+e
 
 ## Sample Output (2)
 
