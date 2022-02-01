@@ -42,8 +42,8 @@ Yes
 
 ## Sample Output (2)
 
-Yes
-3500
+Yes  
+3500  
 3
 
 ## Important
