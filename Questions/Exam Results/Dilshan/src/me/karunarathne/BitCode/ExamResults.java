@@ -21,6 +21,17 @@
 
 package me.karunarathne.BitCode ;
 
+import java.util.Scanner;
+
 public class ExamResults {
-    
+    public static void main(String[] args) {
+        
+    }
+
+    private static void takeInput () {
+        try (Scanner scanner = new Scanner (System.in)) {
+            String subjects [] = scanner.nextLine().split("  ") ;
+            int marks [] = Integer.valueOf(scanner.nextLine().split(" ")) ;
+        }
+    }
 }

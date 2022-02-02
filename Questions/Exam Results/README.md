@@ -1,5 +1,4 @@
 # Exam Results
-![](img.png)
 
 ### Difficulty: Medium  
   
