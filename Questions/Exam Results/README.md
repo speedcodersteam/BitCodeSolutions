@@ -23,7 +23,7 @@ Marks are not in the range don’t print anything.
 
 ## Sample Input
 
-Religion  History  English  Tamil  Science  Mathematics  
+Religion &nbsp;History &nbsp;English &nbsp;Tamil &nbsp;Science &nbsp;Mathematics  
 85 25 54 66 12 99
 
 ## Sample Output

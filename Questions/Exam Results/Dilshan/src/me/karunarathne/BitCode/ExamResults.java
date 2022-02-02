@@ -1,6 +1,4 @@
 /** 
- * Gift Vouchers
- * 
  * Question creadit goes to: 
  * BitCode V 3.0 
  * BITSA
@@ -21,17 +19,51 @@
 
 package me.karunarathne.BitCode ;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class ExamResults {
-    public static void main(String[] args) {
-        
+    private static String subjects [] ;
+    private static String marks [] ;
+    public static void main(String[] args) throws Exception {
+        calculateGrade () ;
     }
 
-    private static void takeInput () {
+    private static void calculateGrade () throws Exception {
         try (Scanner scanner = new Scanner (System.in)) {
-            String subjects [] = scanner.nextLine().split("  ") ;
-            int marks [] = Integer.valueOf(scanner.nextLine().split(" ")) ;
+            subjects = scanner.nextLine().split("  ") ;
+            marks = scanner.nextLine().split(" ") ;
+
+            if (subjects.length != marks.length) {
+                throw new InputMismatchException ("unexpected numebr of inputs") ;
+            }
+
+            printOutput () ;
+        }
+    }
+
+    private static void printOutput() throws Exception {
+        for (int i=0; i<subjects.length; i++) {
+            int mark = Integer.valueOf(marks [i]) ;
+            System.out.println(mark);
+            if (mark > 100) {
+                throw new IllegalArgumentException ("wrong input for marks") ;
+            } 
+
+            System.out.print(subjects [i] + " ") ;
+            if (mark >= 75) {
+                System.out.print ("A") ;
+            } else if (mark >= 65) {
+                System.out.print ("B") ;
+            } else if (mark >= 55) {
+                System.out.print ("C") ;
+            } else if (mark >= 35) {
+                System.out.print ("S") ;
+            } else if (mark >= 0) {
+                System.out.print ("F") ;
+            } 
+
+            throw new IllegalArgumentException ("wrong input for marks") ;
         }
     }
 }
