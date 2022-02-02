@@ -1,53 +1,40 @@
-# Gift Vouchers
+# Exam Results
 ![](img.png)
 
-### Difficulty: Easy  
+### Difficulty: Medium  
   
-ABC Super Center is a shopping complex located in the Colombo 02 area and sells all its products. They have clothes, bags, cosmetics, shoes, kitchen utensils, etc. During the Christmas season, they have launched a number of promotional programs under which they offer gift vouchers for every item priced Rs. 1000 or higher. 
-
-If the value of that item exceeds Rs. 1000, another voucher will be issued for the next Rs. 1000. For example, if you purchase an item worth Rs. 2,500, two gift vouchers will be issued.  
-It is possible for one customer to purchase an **N** number of items.
-  
-Employees make mistakes when calculating the number of vouchers to be issued. So write a program for this.  
+There are 500 O/L students in a school. They are going to face their O/L examination next month. Prior to that, school teachers have decided to conduct a practice examination. So, they have faced that practice examination last week. In this examination, they got 9 papers for the 9 subjects. Now, most of the students are waiting for their results. So, the teachers have to quickly mark the answer scripts to issue the results. In addition to the marks, teachers have to grade their levels according to the level of the marks. That task is somewhat time-consuming. Therefore, you have to write a program to arrange the grade of each subject of each student according to their marks. Grade of level and marks going as follows. 
 
 ## Input Format
 
-The input contains **N** number of amounts separated by spaces.  
-The number of amounts ends with letter "**e**", and it is not case sensitive.  
-If an entered item has a price over Rs. 100000, you can ignore that by considering it to be a mistake by the cashier. 
+The first line contains subject names and all are separated by 2 spaces.  
+The second line contains marks according to the first line subject names sequence and all marks are separated by spaces. 
 
 ## Constraints
-0 < Item Price < 100,000
+0 ≥ Subject Mark ≥ 100
 
 ## Output Format
-The outputs should be answers to the below questions and they must appear in three single lines.
-1. Do have vouchers?
-2. The total value of the bill.
-3. The number of vouchers. 
+The print subject name and relevant grade in a new line one by one.  
+Marks are not in the range don’t print anything.  
+75 ≥ **A**  
+65 ≤ **B** < 75  
+55 ≤ **C** < 65  
+35 ≤ **S** < 55  
+35 > **F**  
 
-## Sample Input (1)
+## Sample Input
 
-1000  
-E
+Religion  History  English  Tamil  Science  Mathematics  
+85 25 54 66 12 99
 
-## Sample Output (1)
+## Sample Output
 
-Yes  
-1000  
-1
-
-## Sample Input (2)
-
-1500  
-2000  
-200000  
-e
-
-## Sample Output (2)
-
-Yes  
-3500  
-3
+Religion A  
+History F  
+English S  
+Tamil B  
+Science F  
+Mathematics A  
 
 ## Important
 Feel free to use any programming language. (Eg: **Java** or **C++**)  
