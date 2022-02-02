@@ -45,8 +45,8 @@ public class ExamResults {
     private static void printOutput() throws Exception {
         for (int i=0; i<subjects.length; i++) {
             int mark = Integer.valueOf(marks [i]) ;
-            System.out.println(mark);
-            if (mark > 100) {
+            
+            if (mark > 100 || mark < 0) {
                 throw new IllegalArgumentException ("wrong input for marks") ;
             } 
 
@@ -62,8 +62,7 @@ public class ExamResults {
             } else if (mark >= 0) {
                 System.out.print ("F") ;
             } 
-
-            throw new IllegalArgumentException ("wrong input for marks") ;
+            System.out.println() ;
         }
     }
 }
