@@ -1,4 +1,3 @@
-
 package me.karunarathne.BitCode ;
 
 import java.util.ArrayList;
@@ -6,6 +5,7 @@ import java.util.Scanner;
 
 public class ProSubsidies {
     private static ArrayList <String> info ;
+    
     public static void main(String[] args) {
         doThatThang ();
     }
@@ -25,6 +25,7 @@ public class ProSubsidies {
             return ;
         } else if (answer.charAt(0) == 'O') {
             System.out.println("No Subsidies");
+            return ;
         }
 
         int amount = 1000 ;
